@@ -53,49 +53,60 @@ inquirer
     .then(response => {
         let readmeText = "";
         if(response.title){
+            if(response.license==='Apache License 2.0'){
+                readmeText+=`[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;}
+            if(response.license==='MIT License'){
+                readmeText+=`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+            }
+            if(response.license==='GNU General Public License v3.0'){
+                readmeText+=`[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+            }
+
+
+
             //Title
-            readmeText += `#${response.title}\n\n`;
+            readmeText += `# ${response.title}\n\n`;
             //Description
             if(response.description){
-                readmeText+=`##Description\n`;
+                readmeText+=`## Description\n`;
                 readmeText+=`${response.description}\n\n`;
             }
             //Table of contents
-            readmeText+=`##Table of Contents\n`
+            readmeText+=`## Table of Contents\n`
             if(response.instalation){
-                readmeText+=`*[Installation](#instalation)\n`;
+                readmeText+=`* [Installation](#instalation)\n`;
             }
             if(response.usage){
-                readmeText+=`*[Usage](#usage)\n`;
+                readmeText+=`* [Usage](#usage)\n`;
             }
-            readmeText+=`*[License](#license)\n`;
+            readmeText+=`* [License](#license)\n`;
             if(response.contributing){
-                readmeText+=`*[Contributing](#contributing)\n`;
+                readmeText+=`* [Contributing](#contributing)\n`;
             }
             if(response.tests){
-                readmeText+=`*[Tests](#tests)\n`;
+                readmeText+=`* [Tests](#tests)\n`;
             }
             if(response.tests){
-                readmeText+=`*[Tests](#tests)\n`;
+                readmeText+=`* [Tests](#tests)\n`;
             }
-            readmeText+=`*[Questions](#questions)\n`;
+            readmeText+=`* [Questions](#questions)\n`;
             readmeText+=`\n`;
             //Installation
             if(response.instalation){
-                readmeText+=`##Instalation\n`;
+                readmeText+=`## Instalation\n`;
                 readmeText+=`${response.instalation}\n\n`;
             }
             //Usage
             if(response.usage){
-                readmeText+=`##Usage\n`;
+                readmeText+=`## Usage\n`;
                 readmeText+=`${response.usage}\n\n`;
             }
             //License
             if(response.license){
-                readmeText+=`##License\n`;
+                readmeText+=`## License\n`;
                 if(response.license==='Apache License 2.0'){
                     readmeText+=`[Apache License 2.0](LICENSE.md)\n`;
-                    fs.copyFile('./data/apache2.o.txt','./LICENSE.md',(error)=>{if(error)console.log(error)});
+                    fs.copyFile('./data/apache2.0.txt','./LICENSE.md',(error)=>{if(error)console.log(error)});
                 }
                 if(response.license==='MIT License'){
                     readmeText+=`[MIT License](LICENSE.md)\n`;
@@ -108,17 +119,17 @@ inquirer
             }
             //Contributing
             if(response.contributing){
-                readmeText+=`##Credits\n`;
+                readmeText+=`## Credits\n`;
                 readmeText+=`${response.contributing}\n\n`;
             }
             //Tests
             if(response.tests){
-                readmeText+=`##Tests\n`;
+                readmeText+=`## Tests\n`;
                 readmeText+=`${response.tests}\n\n`;
             }
             //Questions
             if(response.gitHubName || response.email){
-                readmeText+=`##Questions\n`;
+                readmeText+=`## Questions\n`;
                 if(response.gitHubName){
                     readmeText+=`${response.gitHubName}: [Github](https://github.com/${response.gitHubName})\n\n`;
                 }

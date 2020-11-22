@@ -1,30 +1,30 @@
-# Readme generator
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)# Node readme generator
 
 ## Description
-This project should allow a user to generate a readme using command line prompts
- 
+This is a command line readme generator using node.js
+
 ## Table of Contents
-*[Installation](#instalation)
-*[Usage](#usage)
-*[License](#license)
-*[Contributing](#contributing)
-*[Tests](#tests)
-*[Tests](#tests)
-*[Questions](#questions)
+* [Installation](#instalation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ## Instalation
-download or clone the git repo
+Clone github repository
 
 ## Usage
-run node index.js
+Run 'node index.js' in your command line
 
 ## License
-[MIT License](LICENSE.md)
+[Apache License 2.0](LICENSE.md)
 ## Credits
-Just myself
+Spencer Rosio
 
 ## Tests
-No tests
+n/a
 
 ## Questions
 detanracnier: [Github](https://github.com/detanracnier)
