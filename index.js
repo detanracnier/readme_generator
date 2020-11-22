@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const licenseList = JSON.parse(fs.readFile('./data/license.json','utf8',(error)=> {if(error)console.log(error)}));
 
 inquirer
     .prompt([
