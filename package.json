@@ -1,0 +1,19 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "A command line readme generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/detanracnier/readme_generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/detanracnier/readme_generator/issues"
+  },
+  "homepage": "https://github.com/detanracnier/readme_generator#readme"
+}
