@@ -1,9 +1,9 @@
-#Readme generator
+# Readme generator
 
-##Description
+## Description
 This project should allow a user to generate a readme using command line prompts
-
-##Table of Contents
+ 
+## Table of Contents
 *[Installation](#instalation)
 *[Usage](#usage)
 *[License](#license)
@@ -12,21 +12,21 @@ This project should allow a user to generate a readme using command line prompts
 *[Tests](#tests)
 *[Questions](#questions)
 
-##Instalation
+## Instalation
 download or clone the git repo
 
-##Usage
+## Usage
 run node index.js
 
-##License
+## License
 [MIT License](LICENSE.md)
-##Credits
+## Credits
 Just myself
 
-##Tests
+## Tests
 No tests
 
-##Questions
+## Questions
 detanracnier: [Github](https://github.com/detanracnier)
 
 For additional questions: <spencerrosio3d@gmail.com>
