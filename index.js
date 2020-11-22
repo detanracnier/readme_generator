@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const licenseList = JSON.parse(fs.readFile('./data/license.json','utf8',(error)=> {if(error)console.log(error)}));
 
 inquirer
     .prompt([
@@ -24,58 +25,107 @@ inquirer
             name: "usage"
          },
          {
-            type: "input",
-            message: "Credits:",
-            name: "credits"
+            type: "list",
+            message: "License:",
+            name: "license",
+            choices: ['Apache License 2.0','MIT License','GNU General Public License v3.0']
          },
          {
             type: "input",
-            message: "License:",
-            name: "license"
+            message: "Contributing:",
+            name: "contributing"
+         },
+         {
+            type: "input",
+            message: "Tests:",
+            name: "tests"
+         },
+         {
+            type: "input",
+            message: "Github User Name:",
+            name: "gitHubName"
+         },
+         {
+            type: "input",
+            message: "Email:",
+            name: "email"
          }
     ])
     .then(response => {
         let readmeText = "";
-        if(response.title!=''){
+        if(response.title){
             //Title
             readmeText += `#${response.title}\n\n`;
             //Description
-            if(response.description != ''){
+            if(response.description){
                 readmeText+=`##Description\n`;
                 readmeText+=`${response.description}\n\n`;
             }
             //Table of contents
-            if(response.instalation != '' || response.usage != '' || response.credits != '' ||response.license != ''){
-                readmeText+=`##Table of Contents\n`
-                if(response.instalation != ''){
-                    readmeText+=`*[Installation](#instalation)\n`;
-                }
-                if(response.usage != ''){
-                    readmeText+=`*[Usage](#usage)\n`;
-                }
-                if(response.credits != ''){
-                    readmeText+=`*[Credits](#credits)\n`;
-                }
-                if(response.license != ''){
-                    readmeText+=`*[License](#license)\n`;
-                }
-                readmeText+=`\n`;
+            readmeText+=`##Table of Contents\n`
+            if(response.instalation){
+                readmeText+=`*[Installation](#instalation)\n`;
             }
-            if(response.instalation != ''){
+            if(response.usage){
+                readmeText+=`*[Usage](#usage)\n`;
+            }
+            readmeText+=`*[License](#license)\n`;
+            if(response.contributing){
+                readmeText+=`*[Contributing](#contributing)\n`;
+            }
+            if(response.tests){
+                readmeText+=`*[Tests](#tests)\n`;
+            }
+            if(response.tests){
+                readmeText+=`*[Tests](#tests)\n`;
+            }
+            readmeText+=`*[Questions](#questions)\n`;
+            readmeText+=`\n`;
+            //Installation
+            if(response.instalation){
                 readmeText+=`##Instalation\n`;
                 readmeText+=`${response.instalation}\n\n`;
             }
-            if(response.usage != ''){
+            //Usage
+            if(response.usage){
                 readmeText+=`##Usage\n`;
                 readmeText+=`${response.usage}\n\n`;
             }
-            if(response.credits != ''){
-                readmeText+=`##Credits\n`;
-                readmeText+=`${response.credits}\n\n`;
-            }
-            if(response.license != ''){
+            //License
+            if(response.license){
                 readmeText+=`##License\n`;
-                readmeText+=`${response.license}\n\n`;
+                if(response.license==='Apache License 2.0'){
+                    readmeText+=`[Apache License 2.0](LICENSE.md)\n`;
+                    fs.copyFile('./data/apache2.o.txt','./LICENSE.md',(error)=>{if(error)console.log(error)});
+                }
+                if(response.license==='MIT License'){
+                    readmeText+=`[MIT License](LICENSE.md)\n`;
+                    fs.copyFile('./data/mit.txt','./LICENSE.md',(error)=>{if(error)console.log(error)});
+                }
+                if(response.license==='GNU General Public License v3.0'){
+                    readmeText+=`[GNU General Public License v3.0](LICENSE.md)\n`;
+                    fs.copyFile('./data/gnu3.0.txt','./LICENSE.md',(error)=>{if(error)console.log(error)});
+                }
+            }
+            //Contributing
+            if(response.contributing){
+                readmeText+=`##Credits\n`;
+                readmeText+=`${response.contributing}\n\n`;
+            }
+            //Tests
+            if(response.tests){
+                readmeText+=`##Tests\n`;
+                readmeText+=`${response.tests}\n\n`;
+            }
+            //Questions
+            if(response.gitHubName || response.email){
+                readmeText+=`##Questions\n`;
+                if(response.gitHubName){
+                    readmeText+=`${response.gitHubName}: [Github](https://github.com/${response.gitHubName})\n\n`;
+                }
+                if(response.email){
+                    readmeText+=`For additional questions: <${response.email}>\n\n`;
+                }
             }
             fs.writeFile('README.md',readmeText,(error) => {if(error) console.log(error)});
         } else {
