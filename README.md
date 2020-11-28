@@ -1,8 +1,8 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-# Node readme generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Readme Generator
 
 ## Description
-This is a command line readme generator using node.js
+This is a commandline readme generator design to assist developers in making a high quaility read me in a short amount of time
 
 ## Table of Contents
 * [Installation](#instalation)
@@ -14,13 +14,13 @@ This is a command line readme generator using node.js
 * [Questions](#questions)
 
 ## Instalation
-Clone github repository
+clone git repo or download the index.js file
 
 ## Usage
-Run 'node index.js' in your command line
+run node index.js in terminal
 
 ## License
-[Apache License 2.0](LICENSE.md)
+[MIT License](LICENSE.md)
 ## Credits
 Spencer Rosio
 
@@ -32,3 +32,4 @@ detanracnier: [Github](https://github.com/detanracnier)
 
 For additional questions: <spencerrosio3d@gmail.com>
 
+[Demo video](https://drive.google.com/file/d/1T-PZ4F1Il2u97ke3VU-1FhNmqyd9Uz9P/view)
